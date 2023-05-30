@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch.js";
 import axios from "axios";
+import { axiosInstance } from "../../utils/config";
 
 const Datatable = ({ columns }) => {
   const location = useLocation();
@@ -16,20 +17,17 @@ const Datatable = ({ columns }) => {
     setList(data);
   }, [data]);
 
-  console.log(list, "list check");
-  console.log(columns, "column");
-  console.log(path, "pathh");
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8880/api/${path}/${id}`);
+      await axiosInstance.delete(`/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
     } catch (error) {}
   };
 
   const handleCancel = async (id) => {
     try {
-      await axios.put(`http://localhost:8880/api/${path}/${id}`);
+      await axiosInstance.put(`/${path}/${id}`);
     } catch (error) {
       console.log(error);
     }

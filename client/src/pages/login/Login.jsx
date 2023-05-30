@@ -5,6 +5,7 @@ import { AuthContext } from "../../context/AuthContext";
 import "./login.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { axiosInstance } from "../../utils/config";
 
 function Login() {
   const [errorMessage, setErrormessage] = useState("");
@@ -26,8 +27,8 @@ function Login() {
     dispatch({ type: "LOGIN_START" });
 
     try {
-      const res = await axios.post(
-        "http://localhost:8880/api/auth/login",
+      const res = await axiosInstance.post(
+        "/auth/login",
         credentials
       );
 

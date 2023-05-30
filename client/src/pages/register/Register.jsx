@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {ToastContainer,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { axiosInstance } from "../../utils/config";
 
 function Register() {
   const [errorMessage, setErrormessage] = useState("");
@@ -22,8 +23,8 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8880/api/auth/register",
+      const res = await axiosInstance.post(
+        "/auth/register",
         credentials
       );
       if(res.status === 200) {

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { roomInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import { axiosInstance } from "../../utils/config";
 
 const NewRoom = () => {
   const [info, setInfo] = useState({});
@@ -23,7 +24,7 @@ const NewRoom = () => {
     e.preventDefault();
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
-      await axios.post(`http://localhost:8880/api/room/${hotelId}`, { ...info, roomNumbers });
+      await axiosInstance.post(`/room/${hotelId}`, { ...info, roomNumbers });
     } catch (error) {
       console.log(error);
     }

@@ -42,9 +42,6 @@ const Navbar = () => {
                 </div>
               </div>
             )}
-            {/* <button className="navButton" onClick={handleLogout}>
-              Logout
-            </button> */}
           </div>
         ) : (
           <div className="navItems">

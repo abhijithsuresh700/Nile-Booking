@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../context/AuthContext";
 import { format } from "date-fns";
+import { axiosInstance } from "../../utils/config";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
@@ -78,15 +79,14 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map(async (roomId) => {
-          const res = await axios.put(
-            `http://localhost:8880/api/room/availability/${roomId}`,
+          const res = await axiosInstance.put(
+            `/room/availability/${roomId}`,
             { dates: alldates }
           );
-          const book = await axios.post(
-            `http://localhost:8880/api/booking`,
+          const book = await axiosInstance.post(
+            `/booking`,
             booking
           );
-console.log(res.status,"status checkkk")
           if (res.status === 200) {
             toast.success("Your room has been booked", {
               position: toast.POSITION.TOP_RIGHT,

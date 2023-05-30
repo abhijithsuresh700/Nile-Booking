@@ -28,7 +28,11 @@ app.use("/api/booking", bookingRoute)
 
 
 
-
+app.get('/', async (req, res) => {
+  res.status(200).send({
+    message: 'Hello from Nile-Booking!'
+  })
+})
 
 
 

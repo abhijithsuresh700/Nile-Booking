@@ -8,6 +8,7 @@ import { useState } from "react";
 import { hotelInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import { axiosInstance } from "../../utils/config";
 
 const NewHotel = () => {
   const [files, setFiles] = useState("");
@@ -51,11 +52,10 @@ const NewHotel = () => {
         photos: list,
       };
 try {  
- const response = await axios.post("http://localhost:8880/api/hotel", newhotel);
+ const response = await axiosInstance.post("/hotel", newhotel);
  if(response.status === 200){
   toast.success("New Hotel Added", { position: toast.POSITION.TOP_RIGHT });
  }
- console.log(response,"response check")
 } catch (error) {
   console.log(error)
 }

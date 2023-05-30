@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./login.scss";
+import { axiosInstance } from "../../utils/config";
 
 
 
@@ -26,7 +27,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-       const res = await axios.post("http://localhost:8880/api/auth/login", credentials)
+       const res = await axiosInstance.post("/auth/login", credentials)
        .then(function (response) {
         console.log(response.data,"responseee")
         if(response.data.isAdmin){
