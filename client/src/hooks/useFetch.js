@@ -7,7 +7,7 @@ const useFetch = (query)=>{
     const [loading,setLoading] = useState(false)
     const [error,setError] = useState(false)
     
-    const baseUrl = `http://localhost:8880/api`
+    const baseUrl = `https://nile-booking.onrender.com/api`
     const url = `${baseUrl}${query}`
 
     
