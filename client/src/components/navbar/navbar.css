@@ -1,0 +1,56 @@
+.navbar{
+  height: 50px;
+  background-color: #003580;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer{
+  width: 100%;
+  max-width: 1024px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  font-weight: 500;
+}
+
+.navButton{
+  margin-left: 20px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #003580;
+}
+
+.dropDownContainer{
+  height: max-content;
+  width: max-content;
+  border: 1px solid white;
+  background-color: #FEFFFE;
+  color: #003580;
+  position: absolute;
+  z-index: 9;
+  padding: 5px 10px;
+  gap: 5px;
+  box-shadow: 0.5px 0.5px 2px 0px rgba(0,0,0,0.75);
+}
+
+.dropdownListItems{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 5px;
+}
+
+.dropdownListItem:hover {
+  cursor: pointer;
+  background-color: rgb(223, 217, 217);
+}
+
+.navUsername{
+  cursor: pointer;
+}

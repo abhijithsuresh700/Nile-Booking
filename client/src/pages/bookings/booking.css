@@ -1,0 +1,38 @@
+.bookingsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .bookingsWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .bookingBox{
+    border: 1px solid rgba(0, 0, 0, 0.192);
+    width: 1024px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .bookingImage{
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .bookingDesc{
+    width: 750px;
+  }
+
+  .bookingLink{
+    color: rgb(0,158,218);
+    margin-top: 20px;
+  }
+
+

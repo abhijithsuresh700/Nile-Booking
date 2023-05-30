@@ -1,0 +1,65 @@
+.registercontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 56px);
+    color: white;
+    background-color: black;
+    overflow: hidden;
+    padding: 28px 5px;
+}
+
+.registerwrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #202020;
+    border: 1px solid #373737;
+    padding: 40px 50px;
+    gap: 10px;
+}
+
+.registertitle{
+    font-size: 24px;
+}
+
+.registersuntitle{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.registerinput{
+    border: 1px solid #373737;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: transparent;
+    width: 100%;
+    color: white;
+}
+
+.registerbutton{
+    border-radius: 3px;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #373737;
+    color: #aaaaaa;
+    height:40px
+}
+
+.registermore{
+    display: flex;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+.registerlinks{
+    margin-left: 50px;
+}
+
+.registerlink{
+    margin-left: 30px;
+}
